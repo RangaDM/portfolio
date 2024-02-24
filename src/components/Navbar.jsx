@@ -1,7 +1,6 @@
-
+import  { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { useEffect, useState } from "react";
 import { close, logo, menu } from "../assets";
 import { navLinks } from "../constants";
 import { styles } from "../styles";
@@ -43,10 +42,10 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt='logo' className='w-1/5 object-contain' />
+          <img src={logo} alt='logo' className='w-16 object-contain' />
           <p className='text-white text-[18px] font-bold cursor-pointer flex '>
             Ranga &nbsp;
-            <span className='sm:block hidden'>| portfolio</span>
+            <span className='sm:block hidden'> | Portfolio</span>
           </p>
         </Link>
 
