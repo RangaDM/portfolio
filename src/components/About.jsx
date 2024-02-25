@@ -1,53 +1,10 @@
 import { motion } from "framer-motion";
+// import Tilt from "react-tilt";
 
-import { Tilt } from "react-tilt";
-import { backend, creator, mobile, web } from "../assets";
+// import { services } from "../constants/index";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
-
-const services = [
-  {
-    title: "Web Developer",
-    icon: web,
-  },
-  {
-    title: "React Native Developer",
-    icon: mobile,
-  },
-  {
-    title: "Backend Developer",
-    icon: backend,
-  },
-  {
-    title: "Content Creator",
-    icon: creator,
-  },
-];
-
-const ServiceCard = (index, title, icon) => {
-  <Tilt className='xs:w-[250px] w-full'>
-    <motion.div
-      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
-    >
-      <div
-        
-        className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
-      >
-        <img
-          src={icon}
-          alt='web-development'
-          className='w-16 h-16 object-contain'
-        />
-
-        <h3 className='text-white text-[20px] font-bold text-center'>
-          {title}
-        </h3>
-      </div>
-    </motion.div>
-  </Tilt>
-}
 
 const About = () => {
   return (
@@ -67,13 +24,42 @@ const About = () => {
         create efficient, scalable, and user-friendly solutions that solve
         real-world problems. Let's work together to bring your ideas to life!
       </motion.p>
-      <div className="mt-20 flex flex-wrap gap-10">
-        {services.map(({title, icon}, index) =>
-        ServiceCard(index, title, icon)
-        )}
-      </div>
+
+      {/* <div className='mt-20 flex flex-wrap gap-10'>
+        {services.map((service, index) => (
+          <ServiceCard key={index} service={service} />
+        ))}
+      </div> */}
     </>
   );
 };
+
+// const ServiceCard = ({service}) => (
+//   <Tilt className='xs:w-[250px] w-full'>
+//     <motion.div
+//       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+//       className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
+//     >
+//       <div
+//         options={{
+//           max: 45,
+//           scale: 1,
+//           speed: 450,
+//         }}
+//         className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
+//       >
+//         <img
+//           src={service.icon}
+//           alt='web-development'
+//           className='w-16 h-16 object-contain'
+//         />
+
+//         <h3 className='text-white text-[20px] font-bold text-center'>
+//           {service.title}
+//         </h3>
+//       </div>
+//     </motion.div>
+//   </Tilt>
+// );
 
 export default SectionWrapper(About, "about");
