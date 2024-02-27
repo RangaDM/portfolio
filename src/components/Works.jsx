@@ -6,48 +6,6 @@ import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
 
-// const ProjectCard = ({ name, description, tags, image, source_code_link }) => {
-//     return (
-//         <motion.div
-//         variants={fadeIn("", "", 0.1, 1)}
-//         className='w-full md:w-1/2 lg:w-1/3'
-//         >
-//         <div
-//             className='w-full bg-primary-800 rounded-lg p-5 flex flex-col items-center justify-center gap-5'
-//             style={{ height: "400px" }}
-//         >
-//             <img
-//             src={image}
-//             alt={name}
-//             className='w-full h-[200px] object-contain'
-//             />
-//             <div className='w-full flex flex-col gap-2'>
-//             <h3 className='text-white text-[20px] font-bold'>{name}</h3>
-//             <p className='text-secondary text-[16px]'>{description}</p>
-//             <div className='w-full flex flex-wrap gap-2'>
-//                 {tags.map((tag, index) => (
-//                 <span
-//                     key={`tag-${index}`}
-//                     className={`text-white text-[14px] font-semibold ${tag.color} px-2 py-1 rounded-md`}
-//                 >
-//                     {tag.name}
-//                 </span>
-//                 ))}
-//             </div>
-//             <a
-//                 href={source_code_link}
-//                 target='_blank'
-//                 rel='noreferrer'
-//                 className='text-white text-[14px] font-semibold hover:underline'
-//             >
-//                 Source Code
-//             </a>
-//             </div>
-//         </div>
-//         </motion.div>
-//     );
-//     };
-
 const ProjectCard = ({
   index,
   name,
@@ -128,7 +86,7 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className="mt-20 flex flex-wrap gap-7">
+      <div className="mt-20 flex flex-wrap gap-7 justify-center">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
