@@ -1,29 +1,30 @@
 import {
-  mobile,
   backend,
+  carrent,
   creator,
-  web,
-  javascript,
-  typescript,
-  html,
   css,
+  docker,
+  figma,
+  git,
+  html,
+  javascript,
+  jobit,
+  mobile,
+  mongodb,
+  nodejs,
   reactjs,
   redux,
   tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
   threejs,
+  tripguide,
+  typescript,
+  web
 } from "../assets";
+
+import com from "../assets/company/com.jpg";
+import gsc from "../assets/company/gsc.png";
+import uni from "../assets/company/ruhuna.png";
+import wpf from "../assets/wpf.jpeg";
 
 export const navLinks = [
   {
@@ -116,55 +117,45 @@ const technologies = [
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
+    title: "Finishing O/L Exam",
+    company_name: "Govt: Science College, Matale",
+    icon: gsc,
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "2015",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "I have finished my O/L exam at Govt: Science College.",
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
-    iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
+    title: "Finishing A/L Exam",
+    company_name: "Govt: Science College, Matale",
+    icon: gsc,
     iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    date: "2019",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "I completed my Advanced Level (A/L) examination in the physical science stream at Government Science College.",
     ],
   },
   {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
+    title: "Start Journey at University of Ruhuna",
+    company_name: "UOR - Faculty of Engineering",
+    icon: uni,
+    iconBg: "#383E56",
+    date: "2021",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "I started my journey with 527 friends here at the University of Ruhuna.",
+      "Completed 1st year successfully.",
+    ],
+  },
+  {
+    title: "Got selected to the Department of Computer Engineering.",
+    company_name: "UOR - Faculty of Engineering",
+    icon: com,
+    iconBg: "#383E56",
+    date: "2022 - Present",
+    points: [
+      "I chose to join the Computer Engineering department.",
+      "Currently studying 3rd year.",
     ],
   },
 ];
@@ -198,9 +189,9 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Otto car sale",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+    "A web application enabling users to engage in buying and selling cars, comparing prices and specifications, booking test drives, and exploring the latest car models. The platform also incorporates a car rental service, with administrative features to track rental cars and access detailed car information.",
     tags: [
       {
         name: "react",
@@ -216,50 +207,68 @@ const projects = [
       },
     ],
     image: carrent,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/RangaDM/otto_car_sale_webApp.git",
   },
   {
-    name: "Job IT",
+    name: "Find Cameraman",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+    "We developed this mobile application as part of our third-year mobile application group project. The app serves the purpose of helping us find a cameraman tailored to our event requirements. Flutter and Firebase were the technologies employed in its creation.",
+    tags: [
+      {
+        name: "flutter",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "firebase",
+        color: "green-text-gradient",
+      },
+      {
+        name: "dart",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: jobit,
+    source_code_link: "https://github.com/RangaDM/Cman_mobile_app.git",
+  },
+  {
+    name: "To Do Web App",
+    description:
+    "Created an intuitive web application centered around fundamental CRUD operations and an enhanced user interface/user experience (UI/UX). The application was developed using React, MongoDB, and Tailwind CSS. The app allows users to add, delete, and update tasks, as well as mark them as complete.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "mongodb",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: jobit,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
+        name: "tailwind",
         color: "pink-text-gradient",
       },
     ],
     image: tripguide,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/RangaDM/To_Do_web_app.git",
+  },
+  {
+    name: "WPF Application",
+    description:
+    "Student Manager is a desktop application developed using WPF and structured with MVVM architecture, offering efficient management of student records. It facilitates the seamless addition, editing, and deletion of student details for enhanced usability.",
+    tags: [
+      {
+        name: "wpf",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "c#",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: wpf,
+    source_code_link: "https://github.com/RangaDM/MVVM-Student-Management-System.git",
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { experiences, projects, services, technologies, testimonials };
+
