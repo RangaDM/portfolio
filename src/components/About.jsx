@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import { motion } from "framer-motion";
 
 import { Tilt } from "react-tilt";
@@ -48,12 +49,7 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        I am a full-stack developer with a passion for creating beautiful
-        and functional user experiences. I have a strong foundation in
-        web development and I am always looking to improve my skills and
-        learn new technologies. I am a quick learner and I am always
-        looking for new challenges to solve. I am a team player and I
-        believe that collaboration is the key to success.
+        Hi, I'm Ranga Dananjaya, a third-year student at the University of Ruhuna studying Computer Engineering. I really like computer programming, web development, and software development. I've worked on various projects in these areas and always give my best effort. Besides that, I aim to have a positive perspective on life and be a well-regarded member of society. I think everything becomes an art when you put your heart into it.
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10 justify-center'>
