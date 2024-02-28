@@ -45,7 +45,7 @@ const Navbar = () => {
           <img src={logo} alt='logo' className='w-16 object-contain' />
           <p className='text-white text-[18px] font-bold cursor-pointer flex '>
             Ranga &nbsp;
-            <span className='sm:block hidden'> | Portfolio</span>
+            <span className='sm:block hidden'> Dananjaya</span>
           </p>
         </Link>
 
