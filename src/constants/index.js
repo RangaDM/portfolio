@@ -167,8 +167,16 @@ const testimonials = [
     name: "John Doe",
     designation: "CEO",
     company: "XYZ Company",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    image: "https://attractmorematches.com/wp-content/uploads/2023/10/Screenshot-2023-10-18-at-5.08.47-PM.png",
   },
+  {
+    testimonial:
+    "He is a very talented and hardworking individual. He is very passionate about his work and always delivers high-quality results. He is a great team player and has excellent communication skills. He is always willing to go the extra mile to get the job done.",
+    name: "Katie Johnson",
+    designation: "CTO",
+    company: "ABC Company",
+    image: "https://attractmorematches.com/wp-content/uploads/2023/10/Screenshot-2023-10-18-at-5.08.47-PM.png",
+  }
 ];
 
 const projects = [
