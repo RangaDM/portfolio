@@ -21,6 +21,14 @@ import {
   web
 } from "../assets";
 
+import phone from "../assets/con_me/call.png";
+import facebook from "../assets/con_me/facebook.png";
+import github from "../assets/con_me/github.png";
+import address from "../assets/con_me/home.png";
+import instagram from "../assets/con_me/instagram.svg";
+import linkedin from "../assets/con_me/linked_in.svg";
+import twitter from "../assets/con_me/twitter.svg";
+
 import com from "../assets/company/com.jpg";
 import gsc from "../assets/company/gsc.png";
 import uni from "../assets/company/ruhuna.png";
@@ -112,6 +120,44 @@ const technologies = [
   {
     name: "docker",
     icon: docker,
+  },
+];
+
+const contactInfo = [
+  {
+    name: "Email",
+    icon: github,
+    link: "https://github.com/RangaDM"
+  },
+  {
+    name: "LinkedIn",
+    icon: linkedin,
+    link: "in/ranga-maithreepala-0a9196262"
+  },
+  {
+    name: "Twitter",
+    icon: twitter,
+    link: "#"
+  },
+  {
+    name: "Instagram",
+    icon: instagram,
+    link: "https://www.instagram.com/ranga_dananjaya?igsh=YzAwZjE1ZTI0Zg=="
+  },
+  {
+    name: "Facebook",
+    icon: facebook,
+    link: "https://www.facebook.com/ranga.maithreepala.3?mibextid=ZbWKwL"
+  },
+  {
+    name: "Phone",
+    icon: phone,
+    link: "tel:+94772222222"
+  },
+  {
+    name: "Address",
+    icon: address,
+    link: "https://goo.gl/maps/1SZkJqa7CFF2GxiZ6"
   },
 ];
 
@@ -262,5 +308,5 @@ const projects = [
   },
 ];
 
-export { experiences, projects, services, technologies, testimonials };
+export { contactInfo, experiences, projects, services, technologies, testimonials };
 
