@@ -34,6 +34,14 @@ import gsc from "../assets/company/gsc.png";
 import uni from "../assets/company/ruhuna.png";
 import wpf from "../assets/wpf.jpeg";
 
+import css2 from "../assets/skills/css.png";
+import figma2 from "../assets/skills/figma.png";
+import react2 from "../assets/skills/react.png";
+import html2 from "../assets/skills/html.png";
+import node2 from "../assets/skills/node.png";
+import graphql2 from "../assets/skills/graphql.png";
+import mongo2 from "../assets/skills/mongodb.png";
+
 export const navLinks = [
   {
     id: "about",
@@ -46,6 +54,37 @@ export const navLinks = [
   {
     id: "contact",
     title: "Contact",
+  },
+];
+
+const skills = [
+  {
+    title: "HTML",
+    imageSrc: html2
+  },
+  {
+    title: "CSS",
+    imageSrc: css2
+  },
+  {
+    title: "React",
+    imageSrc: react2
+  },
+  {
+    title: "Node",
+    imageSrc: node2
+  },
+  {
+    title: "GraphQL",
+    imageSrc: graphql2
+  },
+  {
+    title: "MongoDB",
+    imageSrc: mongo2
+  },
+  {
+    title: "Figma",
+    imageSrc: figma2
   },
 ];
 
@@ -308,5 +347,5 @@ const projects = [
   },
 ];
 
-export { contactInfo, experiences, projects, services, technologies, testimonials };
+export { contactInfo, experiences, projects, services, technologies, testimonials, skills };
 

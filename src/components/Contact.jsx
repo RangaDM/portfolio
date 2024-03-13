@@ -1,12 +1,9 @@
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
-
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { slideIn } from "../utils/motion";
-// import MzgCanvas from "./canvas/Massage";
-// import EarthCanvas from "./canvas/Earth";
 import { Link } from "react-router-dom";
 import { contactInfo } from "../constants";
 import { BallCanvas } from "./canvas";

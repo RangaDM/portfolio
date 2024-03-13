@@ -5,7 +5,6 @@ import { styles } from "../styles";
 import { textVariant } from "../utils/motion";
 import { BallCanvas } from "./canvas";
 
-
 const Tech = () => {
   return (
     <>
