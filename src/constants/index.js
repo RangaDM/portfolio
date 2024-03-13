@@ -41,6 +41,8 @@ import html2 from "../assets/skills/html.png";
 import node2 from "../assets/skills/node.png";
 import graphql2 from "../assets/skills/graphql.png";
 import mongo2 from "../assets/skills/mongodb.png";
+import kubernetes from "../assets/skills/kubernetes.png";
+import Linux from "../assets/skills/linux.png";
 
 export const navLinks = [
   {
@@ -86,6 +88,22 @@ const skills = [
     title: "Figma",
     imageSrc: figma2
   },
+  {
+    title: "Git",
+    imageSrc: git
+  },
+  {
+    title: "Docker",
+    imageSrc: docker
+  },
+  {
+    title: "kubernetes",
+    imageSrc: kubernetes
+  },
+  {
+    title: "Linux",
+    imageSrc: Linux
+  }
 ];
 
 const services = [

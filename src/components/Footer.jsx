@@ -1,28 +1,26 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { LuInstagram } from "react-icons/lu";
+import { FaFacebook } from "react-icons/fa6";
 
 const Footer = () => {
   return (
     <footer className="footer">
-        <div className="waves">
-            <div className="wave" id="wave1"></div>
-            <div className="wave" id="wave1"></div>
-            <div className="wave" id="wave1"></div>
-            <div className="wave" id="wave1"></div>
-        </div>
       <ul className="flex justify-center items-center gap-4">
         <li>
-          <a href=""><FaGithub /></a>
+          <a href="https://github.com/RangaDM"><FaGithub /></a>
         </li>
         <li>
-          <a href=""><FaLinkedin /></a>
+          <a href="in/ranga-maithreepala-0a9196262"><FaLinkedin /></a>
         </li>
         <li>
           <a href=""><FaSquareXTwitter /></a>
         </li>
         <li>
-          <a href=""><LuInstagram /></a>
+          <a href="https://www.instagram.com/ranga_dananjaya?igsh=YzAwZjE1ZTI0Zg=="><LuInstagram /></a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/ranga.maithreepala.3?mibextid=ZbWKwL"><FaFacebook/></a>
         </li>
       </ul>
         <p className="text-center text-white mt-4">

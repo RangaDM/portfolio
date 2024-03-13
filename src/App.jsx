@@ -12,7 +12,6 @@ import {
 import Banner from "./components/Banner";
 import Footer from "./components/Footer";
 import Skills from "./components/Skills";
-import Tech from "./components/Tech";
 
 function App() {
   return (
@@ -24,7 +23,6 @@ function App() {
         </div>
         <About />
         <Experience />
-        {/* <Tech /> */}
         <Skills />
         <Works />
         {/* <Feedbacks /> */}
