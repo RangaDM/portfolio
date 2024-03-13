@@ -1,11 +1,11 @@
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { contactInfo } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { slideIn } from "../utils/motion";
-import { Link } from "react-router-dom";
-import { contactInfo } from "../constants";
 import { BallCanvas } from "./canvas";
 
 const Contact = () => {

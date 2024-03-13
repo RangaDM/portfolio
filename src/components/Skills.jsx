@@ -22,7 +22,7 @@ const Skills = () => {
           {skills.map((skill, id) => {
             return (
               <div key={id} className={styless.skill}>
-                <div className={styless.skillImageContainer}>
+                <div className={`relative overflow-auto ${styless.skillImageContainer}`}>
                   <img src={skill.imageSrc} alt={skill.title} />
                 </div>
                 <p>{skill.title}</p>
