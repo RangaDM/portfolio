@@ -18,8 +18,10 @@ import {
   threejs,
   tripguide,
   typescript,
-  web
+  web,
 } from "../assets";
+
+import placepilot from "../assets/placepilot.png";
 
 import phone from "../assets/con_me/call.png";
 import facebook from "../assets/con_me/facebook.png";
@@ -363,6 +365,31 @@ const projects = [
     image: wpf,
     source_code_link: "https://github.com/RangaDM/MVVM-Student-Management-System.git",
   },
+  {
+    name: "PlacePilot",
+    description:
+    "I created a web application using React.js to assist users in locating nearby stores and accessing relevant information. Inspired by a Google Maps article, I embarked on this project out of personal interest. From gathering requirements to deployment, I extensively researched and gained valuable insights. Integrating web scraping technology enabled us to gather accurate and current store details from online maps and directories. Features such as search functionality, pagination, and error handling were implemented to ensure a smooth user experience. Using HTML, CSS, JavaScript, and React.js, I developed the frontend, employing web scraping techniques for data acquisition from map services.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "node",
+        color: "green-text-gradient",
+      },
+      {
+        name: "express",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: placepilot,
+    source_code_link: "https://github.com/RangaDM/PlacePilot_WebApp_frontend"
+  }
 ];
 
 export { contactInfo, experiences, projects, services, technologies, testimonials, skills };
