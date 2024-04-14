@@ -40,11 +40,17 @@ import css2 from "../assets/skills/css.png";
 import figma2 from "../assets/skills/figma.png";
 import react2 from "../assets/skills/react.png";
 import html2 from "../assets/skills/html.png";
+import js from "../assets/skills/js.png";
 import node2 from "../assets/skills/node.png";
 import graphql2 from "../assets/skills/graphql.png";
 import mongo2 from "../assets/skills/mongodb.png";
 import kubernetes from "../assets/skills/kubernetes.png";
 import Linux from "../assets/skills/linux.png";
+import agile from "../assets/skills/planning.png";
+import python from "../assets/skills/python.png";
+import net from "../assets/skills/computer.png";
+import cloud2 from "../assets/skills/cloud-computing.png";
+import terraform from "../assets/skills/terraform.png";
 
 export const navLinks = [
   {
@@ -71,12 +77,16 @@ const skills = [
     imageSrc: css2
   },
   {
-    title: "React",
-    imageSrc: react2
+    title: "JavaScript",
+    imageSrc: js
   },
   {
     title: "Node",
     imageSrc: node2
+  },
+  {
+    title: "React",
+    imageSrc: react2
   },
   {
     title: "GraphQL",
@@ -91,8 +101,32 @@ const skills = [
     imageSrc: figma2
   },
   {
+    title: "Agile",
+    imageSrc: agile
+  },
+  {
+    title: "Linux",
+    imageSrc: Linux
+  },
+  {
+    title: "Python",
+    imageSrc: python
+  },
+  {
     title: "Git",
     imageSrc: git
+  },
+  {
+    title: "Networking",
+    imageSrc: net
+  },
+  {
+    title: "AWS",
+    imageSrc: cloud2
+  },
+  {
+    title: "Terraform",
+    imageSrc: terraform
   },
   {
     title: "Docker",
@@ -102,10 +136,6 @@ const skills = [
     title: "kubernetes",
     imageSrc: kubernetes
   },
-  {
-    title: "Linux",
-    imageSrc: Linux
-  }
 ];
 
 const services = [
