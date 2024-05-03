@@ -5,6 +5,7 @@ import propic from "../assets/propic.png";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { fadeIn } from "../utils/motion";
+import resume from "../assets/Ranga_Intern_cv.pdf"
 
 const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -74,7 +75,7 @@ const Banner = () => {
           >
             <div>
               <a
-                href="src/assets/Ranga_Intern_cv.pdf"
+                href={resume}
                 download
                 target="_blank"
                 rel="noreferrer"
