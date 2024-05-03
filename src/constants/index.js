@@ -148,7 +148,7 @@ const services = [
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "DevOps Engineer",
     icon: backend,
   },
   {
