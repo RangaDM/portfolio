@@ -7,21 +7,44 @@ import { styles } from "../styles";
 import TrackVisibility from "react-on-screen";
 import rocket from "../assets/rocket.png";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useRef } from "react";
+import { useEffect, useState } from "react";
 
 const Skills = () => {
   const sliderRef = useRef(null);
+  const [slidesToShow, setSlidesToShow] = useState(
+    window.innerWidth > 600 ? 5 : 2
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSlidesToShow(
+        window.innerWidth > 900
+          ? 6
+          : window.innerWidth > 700
+          ? 5
+          : window.innerWidth > 600
+          ? 4
+          : window.innerWidth > 500
+          ? 3
+          : 2
+      );
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 6,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 1000,
-};
+    infinite: true,
+    speed: 500,
+    slidesToShow: slidesToShow,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1000,
+  };
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -33,20 +56,24 @@ const Skills = () => {
       <br />
       <br />
       <div>
-      <div>
-    <Slider ref={sliderRef} {...settings}>
-      {skills.map((skill, id) => {
-        return (
-          <div key={id} className={styless.skill}>
-            <div className={`relative overflow-auto ${styless.skillImageContainer}`}>
-              <img src={skill.imageSrc} alt={skill.title} />
-            </div>
-            <p>{skill.title}</p>
-          </div>
-        );
-      })}
-    </Slider>
-  </div>
+        <div>
+          <Slider ref={sliderRef} {...settings}>
+            {skills.map((skill, id) => {
+              return (
+                <div key={id} className={styless.skill}>
+                  <div className="items-center flex flex-col">
+                    <div
+                      className={`relative overflow-auto ${styless.skillImageContainer}`}
+                    >
+                      <img src={skill.imageSrc} alt={skill.title} />
+                    </div>
+                    <p>{skill.title}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </Slider>
+        </div>
         <div className="banner p-1 pt-14 flex items-center justify-center">
           <TrackVisibility>
             {({ isVisible }) => (
