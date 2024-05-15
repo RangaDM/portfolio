@@ -69,9 +69,9 @@ const Contact = () => {
 
   return (
     <>
-    <p className={`${styles.sectionSubText} text-center pb-5`}>
-    Get in touch with me
-    </p>
+      <p className={`${styles.sectionSubText} text-center pb-5`}>
+        Get in touch with me
+      </p>
       <div
         className={`xl:mt-12 flex xl:flex-row flex-col gap-10 overflow-hidden`}
       >
@@ -131,7 +131,7 @@ const Contact = () => {
 
         <motion.div
           variants={slideIn("right", "tween", 0.2, 1)}
-          className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
+          className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px] lg:block hidden"
         >
           <div className="flex flex-row flex-wrap justify-center gap-10 overflow-hidden">
             {contactInfo.map((technology) => (
