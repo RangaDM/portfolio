@@ -22,6 +22,7 @@ import {
 } from "../assets";
 
 import placepilot from "../assets/placepilot.png";
+import medimate from "../assets/MediMate.png";
 
 import phone from "../assets/con_me/call.png";
 import facebook from "../assets/con_me/facebook.png";
@@ -419,6 +420,27 @@ const projects = [
     ],
     image: placepilot,
     source_code_link: "https://github.com/RangaDM/PlacePilot_WebApp_frontend"
+  },
+  {
+    name: "MediMate",
+    description:
+    "This application serves as a comprehensive tool to track and manage your medical history and the status of various health conditions. It's designed to aid in future medical decisions by providing a clear and organized view of your health history. I developed this project out of personal interest, aiming to create a solution that can make a difference in people's lives. The application is built using the MERN tech stack (MongoDB, Express.js, React.js, and Node.js), showcasing my skills in full-stack development",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "node",
+        color: "green-text-gradient",
+      },
+      {
+        name: "mongodb",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: medimate,
+    source_code_link: "https://github.com/RangaDM/MediMate_frontend.git"
   }
 ];
 
