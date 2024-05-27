@@ -326,6 +326,14 @@ const projects = [
         color: "blue-text-gradient",
       },
       {
+        name: "nodejs",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "java",
+        color: "blue-text-gradient",
+      },
+      {
         name: "mongodb",
         color: "green-text-gradient",
       },
@@ -436,6 +444,10 @@ const projects = [
       },
       {
         name: "mongodb",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "tailwind",
         color: "pink-text-gradient",
       },
     ],
