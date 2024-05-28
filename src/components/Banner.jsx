@@ -5,7 +5,7 @@ import propic from "../assets/propic.png";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { fadeIn } from "../utils/motion";
-import resume from "../assets/Ranga_Intern_cv.pdf";
+import resume from "../assets/Ranga_Resume.pdf";
 
 const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
