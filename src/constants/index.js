@@ -23,6 +23,7 @@ import {
 
 import placepilot from "../assets/placepilot.png";
 import medimate from "../assets/MediMate.png";
+import salcal from "../assets/salcal.png";
 
 import phone from "../assets/con_me/call.png";
 import facebook from "../assets/con_me/facebook.png";
@@ -453,6 +454,27 @@ const projects = [
     ],
     image: medimate,
     source_code_link: "https://github.com/RangaDM/MediMate_frontend.git"
+  },
+  {
+    name: "Salary Calculator - Ultimate CICD pipeline",
+    description:
+    "This project showcases my expertise in DevOps, including continuous integration, continuous deployment, infrastructure automation, and cloud management. It also demonstrates my skills in React development, including state management, component architecture, and user interface design.",
+    tags: [
+      {
+        name: "reactjs",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "github action",
+        color: "green-text-gradient",
+      },
+      {
+        name: "docker",
+        color: "blue-text-gradient",
+      },
+    ],
+    image: salcal,
+    source_code_link: "https://rangadm.github.io/Salary-Calculator-ultimate-CICD-pipeline/"
   }
 ];
 
