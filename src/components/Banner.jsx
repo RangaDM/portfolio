@@ -6,6 +6,11 @@ import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { fadeIn } from "../utils/motion";
 import resume from "../assets/Ranga_Resume.pdf";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { LuInstagram } from "react-icons/lu";
+import { FaFacebook } from "react-icons/fa6";
+import { FaMedium } from "react-icons/fa";
+import { AiOutlineMail } from "react-icons/ai";
 
 const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -15,6 +20,21 @@ const Banner = () => {
   const [index, setIndex] = useState(1);
   const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
   const period = 2000;
+
+  const links = [
+    { url: "mailto:rangamaithreepala@gmail.com", icon: <AiOutlineMail /> },
+    { url: "https://github.com/RangaDM", icon: <FaGithub /> },
+    { url: "https://medium.com/@rangamaithreepala", icon: <FaMedium /> },
+    { url: "in/ranga-maithreepala-0a9196262", icon: <FaLinkedin /> },
+    {
+      url: "https://www.instagram.com/ranga_dananjaya?igsh=YzAwZjE1ZTI0Zg==",
+      icon: <LuInstagram />,
+    },
+    {
+      url: "https://www.facebook.com/ranga.maithreepala.3?mibextid=ZbWKwL",
+      icon: <FaFacebook />,
+    },
+  ];
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -85,6 +105,18 @@ const Banner = () => {
               </a>
             </div>
           </motion.div>
+          <motion.dev className="flex flex-col items-start mt-6">
+            <ul className="flex justify-center items-center gap-4">
+              {links.map((link, index) => (
+                <motion.li
+                  key={index}
+                  variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+                >
+                  <a href={link.url}>{link.icon}</a>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.dev>
         </div>
         <div className="p-1">
           <TrackVisibility>
