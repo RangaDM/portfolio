@@ -15,7 +15,7 @@ const Footer = () => {
           <a href="https://medium.com/@rangamaithreepala"><FaMedium /></a>
         </li>
         <li>
-          <a href="in/ranga-maithreepala-0a9196262"><FaLinkedin /></a>
+          <a href="https://www.linkedin.com/in/ranga-maithreepala-0a9196262/"><FaLinkedin /></a>
         </li>
         <li>
           <a href=""><FaSquareXTwitter /></a>

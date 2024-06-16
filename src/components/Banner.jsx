@@ -25,7 +25,7 @@ const Banner = () => {
     { url: "mailto:rangamaithreepala@gmail.com", icon: <AiOutlineMail /> },
     { url: "https://github.com/RangaDM", icon: <FaGithub /> },
     { url: "https://medium.com/@rangamaithreepala", icon: <FaMedium /> },
-    { url: "in/ranga-maithreepala-0a9196262", icon: <FaLinkedin /> },
+    { url: "https://www.linkedin.com/in/ranga-maithreepala-0a9196262/", icon: <FaLinkedin /> },
     {
       url: "https://www.instagram.com/ranga_dananjaya?igsh=YzAwZjE1ZTI0Zg==",
       icon: <LuInstagram />,
