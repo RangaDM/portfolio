@@ -2,6 +2,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { LuInstagram } from "react-icons/lu";
 import { FaFacebook } from "react-icons/fa6";
+import { FaMedium } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -9,6 +10,9 @@ const Footer = () => {
       <ul className="flex justify-center items-center gap-4">
         <li>
           <a href="https://github.com/RangaDM"><FaGithub /></a>
+        </li>
+        <li>
+          <a href="https://medium.com/@rangamaithreepala"><FaMedium /></a>
         </li>
         <li>
           <a href="in/ranga-maithreepala-0a9196262"><FaLinkedin /></a>
