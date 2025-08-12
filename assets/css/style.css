@@ -328,7 +328,6 @@ main {
 \*-----------------------------------*/
 
 .sidebar {
-  margin-bottom: 15px;
   max-height: 112px;
   overflow: hidden;
   transition: var(--transition-2);
@@ -1372,11 +1371,9 @@ textarea.form-input::-webkit-resizer {
 
   .sidebar {
     position: relative;
-    max-height: 100px; /* Only show top section by default */
     overflow: hidden; /* Hide overflow content */
     transition: max-height 0.3s ease;
     padding: 15px;
-    margin-bottom: 15px;
   }
 
   .sidebar.active {
