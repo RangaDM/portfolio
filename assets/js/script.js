@@ -29,43 +29,79 @@ navigationLinks.forEach(link => {
   });
 });
 
-// testimonials variables
+// testimonials and modal handling (scoped per article)
 const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
-const modalContainer = document.querySelector("[data-modal-container]");
-const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
-const overlay = document.querySelector("[data-overlay]");
 
-// modal variable
-const modalImg = document.querySelector("[data-modal-img]");
-const modalTitle = document.querySelector("[data-modal-title]");
-const modalText = document.querySelector("[data-modal-text]");
+function getScopedModalElements(triggerElem) {
+  const article = triggerElem.closest("article");
+  if (!article) return null;
 
-// Enhanced modal toggle function with mobile detection
-const testimonialsModalFunc = function () {
-  modalContainer.classList.toggle("active");
-  overlay.classList.toggle("active");
-  
-  // Prevent body scrolling when modal is open on mobile
+  const container = article.querySelector("[data-modal-container]");
+  if (!container) return null;
+
+  return {
+    article,
+    container,
+    overlay: container.querySelector("[data-overlay]"),
+    closeBtn: container.querySelector("[data-modal-close-btn]"),
+    modalImg: container.querySelector("[data-modal-img]"),
+    modalTitle: container.querySelector("[data-modal-title]"),
+    modalText: container.querySelector("[data-modal-text]"),
+    modalDate: container.querySelector("[data-modal-date]"),
+    modalDate2: container.querySelector("[data-modal-date2]")
+  };
+}
+
+function toggleScopedModal(container, overlayElem) {
+  container.classList.toggle("active");
+  if (overlayElem) overlayElem.classList.toggle("active");
   if (window.innerWidth <= 767) {
     document.body.classList.toggle("no-scroll");
   }
 }
 
-// add click event to all modal items
+// open modal from clicked testimonial card (in About or Portfolio)
 for (let i = 0; i < testimonialsItem.length; i++) {
   testimonialsItem[i].addEventListener("click", function () {
-    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
+    const scoped = getScopedModalElements(this);
+    if (!scoped) return;
 
-    testimonialsModalFunc();
+    const avatar = this.querySelector("[data-testimonials-avatar]");
+    const title = this.querySelector("[data-testimonials-title]");
+    const text = this.querySelector("[data-testimonials-text]");
+    const date = this.querySelector("[data-testimonials-date]");
+    const date2 = this.querySelector("[data-testimonials-date2]");
+
+    if (avatar && scoped.modalImg) {
+      scoped.modalImg.src = avatar.src;
+      scoped.modalImg.alt = avatar.alt || "";
+    }
+    if (title && scoped.modalTitle) {
+      scoped.modalTitle.innerHTML = title.innerHTML;
+    }
+    if (text && scoped.modalText) {
+      scoped.modalText.innerHTML = text.innerHTML;
+    }
+    if (date && scoped.modalDate) {
+      scoped.modalDate.innerHTML = date.innerHTML;
+    }
+    if (date2 && scoped.modalDate2) {
+      scoped.modalDate2.innerHTML = date2.innerHTML;
+    }
+
+    toggleScopedModal(scoped.container, scoped.overlay);
   });
 }
 
-// add click event to modal close button and overlay
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
+// bind close and overlay clicks per modal instance
+const allModalContainers = document.querySelectorAll("[data-modal-container]");
+allModalContainers.forEach(container => {
+  const overlayElem = container.querySelector("[data-overlay]");
+  const closeBtn = container.querySelector("[data-modal-close-btn]");
+  const boundToggle = () => toggleScopedModal(container, overlayElem);
+  if (closeBtn) closeBtn.addEventListener("click", boundToggle);
+  if (overlayElem) overlayElem.addEventListener("click", boundToggle);
+});
 
 // custom select variables
 const select = document.querySelector("[data-select]");

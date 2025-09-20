@@ -742,7 +742,12 @@ main {
   width: max-content;
   border-radius: 14px;
   margin-bottom: 15px;
+  padding: 6px;
   box-shadow: var(--shadow-2);
+}
+
+.modal-avatar-box img {
+  width: 40px;
 }
 
 .modal-img-wrapper > img {
@@ -1060,6 +1065,52 @@ main {
   color: var(--light-gray-70);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
+}
+
+/* modified portfolio section */
+
+.new-project-item {
+  min-width: 100%;
+  scroll-snap-align: center;
+}
+
+.new-project-avatar-box {
+position: absolute;
+top: 0;
+left: 0;
+transform: translate(15px, -25px);
+background: var(--bg-gradient-onyx);
+border-radius: 14px;
+box-shadow: var(--shadow-1);
+}
+
+.new-project-item-title {
+margin-bottom: 7px;
+}
+
+.new-project-text {
+color: var(--light-gray);
+font-size: var(--fs-6);
+font-weight: var(--fw-300);
+line-height: 1.6;
+display: -webkit-box;
+line-clamp: 4;
+-webkit-line-clamp: 4;
+-webkit-box-orient: vertical;
+overflow: hidden;
+}
+
+.new-project-content-card {
+  position: relative;
+  background: var(--border-gradient-onyx);
+  border-radius: 14px;
+  box-shadow: var(--shadow-2);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.new-project-content-box {
+  padding: 20px;
 }
 
 /*-----------------------------------*\
@@ -1642,6 +1693,10 @@ textarea.form-input::-webkit-resizer {
     text-align: center;
     margin-left: 0;
   }
+
+  .new-project-item {
+    min-width: 100%;
+  }
 }
 
 /* Animation for sidebar toggle */
@@ -1892,10 +1947,11 @@ textarea.form-input::-webkit-resizer {
   .modal-avatar-box {
     border-radius: 18px;
     margin-bottom: 0;
+    padding: 8px;
   }
 
   .modal-avatar-box img {
-    width: 65px;
+    width: 57px;
   }
 
   .modal-img-wrapper > img {
@@ -1982,6 +2038,31 @@ textarea.form-input::-webkit-resizer {
   .form-btn ion-icon {
     font-size: 18px;
   }
+
+  /* portfolio */
+  .new-project-avatar-box {
+    transform: translate(30px, -30px);
+    border-radius: 20px;
+  }
+
+  .new-project-avatar-box img {
+    width: 80px;
+  }
+
+  .new-project-item-title {
+    margin-bottom: 10px;
+    /* margin-left: 95px; */
+  }
+
+  .new-project-text {
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+  }
+
+  .new-project-content-card {
+    padding: 0px;
+    padding-bottom: 5px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -2060,7 +2141,12 @@ textarea.form-input::-webkit-resizer {
    * BLOG
    */
   .blog-banner-box {
-    height: 230px;
+    height: 180px;
+  }
+
+  /* portfolio */
+  .new-project-item {
+    min-width: calc(50% - 15px);
   }
 }
 
