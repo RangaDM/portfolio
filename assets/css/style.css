@@ -772,6 +772,22 @@ main {
   line-height: 1.6;
 }
 
+/* Vibe */
+
+.vibe-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+  margin: 0 -15px;
+  padding: 25px 15px;
+  padding-bottom: 35px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+}
+
 /*-----------------------------------*\
   #RESUME
 \*-----------------------------------*/
@@ -1589,6 +1605,12 @@ textarea.form-input::-webkit-resizer {
     padding-bottom: 25px;
   }
 
+  /* Vibe */
+  .vibe-list {
+    padding-bottom: 25px;
+    gap: 55px;
+  }
+
   /* Contact form */
   .mapbox {
     height: 200px;
@@ -1893,6 +1915,14 @@ textarea.form-input::-webkit-resizer {
   }
 
   .testimonials-list {
+    gap: 30px;
+    margin: 0 -30px;
+    padding: 30px;
+    padding-bottom: 35px;
+  }
+  
+  /* vibe */
+  .vibe-list {
     gap: 30px;
     margin: 0 -30px;
     padding: 30px;
