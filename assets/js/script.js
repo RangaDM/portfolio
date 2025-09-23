@@ -194,24 +194,32 @@ const pages = document.querySelectorAll("[data-page]");
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        
-        // Smooth scroll to top on mobile
-        if (window.innerWidth <= 767) {
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-          });
-        } else {
-          window.scrollTo(0, 0);
-        }
+    const targetPage = this.innerText.trim().toLowerCase();
+
+    // Toggle pages based on data-page, do not rely on aligned indices
+    for (let j = 0; j < pages.length; j++) {
+      const isTarget = pages[j].dataset.page === targetPage;
+      if (isTarget) {
+        pages[j].classList.add("active");
       } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
+        pages[j].classList.remove("active");
       }
+    }
+
+    // Update nav link active states using the clicked element
+    for (let k = 0; k < navigationLinks.length; k++) {
+      navigationLinks[k].classList.remove("active");
+    }
+    this.classList.add("active");
+
+    // Scroll to top after navigation
+    if (window.innerWidth <= 767) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      window.scrollTo(0, 0);
     }
   });
 }
