@@ -53,10 +53,31 @@ function getScopedModalElements(triggerElem) {
 }
 
 function toggleScopedModal(container, overlayElem) {
+  const isOpening = !container.classList.contains("active");
+  
   container.classList.toggle("active");
   if (overlayElem) overlayElem.classList.toggle("active");
   if (window.innerWidth <= 767) {
-    document.body.classList.toggle("no-scroll");
+    if (isOpening) {
+      // Store current scroll position before applying no-scroll
+      const scrollY = window.scrollY;
+      document.body.style.top = `-${scrollY}px`;
+      document.body.classList.add("no-scroll");
+    } else {
+      // Restore scroll position when closing
+      const scrollY = document.body.style.top;
+      document.body.classList.remove("no-scroll");
+      document.body.style.top = '';
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    }
+  }
+  
+  // Reset modal scroll position to top when opening
+  if (isOpening) {
+    const modal = container.querySelector(".testimonials-modal");
+    if (modal) {
+      modal.scrollTop = 0;
+    }
   }
 }
 

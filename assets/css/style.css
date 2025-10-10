@@ -1680,6 +1680,25 @@ textarea.form-input::-webkit-resizer {
     max-height: 80vh;
     overflow-y: auto;
   }
+
+  /* Custom scrollbar for mobile testimonials modal */
+  .testimonials-modal::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  .testimonials-modal::-webkit-scrollbar-track {
+    background: var(--eerie-black-1);
+    border-radius: 1px;
+  }
+
+  .testimonials-modal::-webkit-scrollbar-thumb {
+    background: var(--jet);
+    border-radius: 1px;
+  }
+
+  .testimonials-modal::-webkit-scrollbar-thumb:hover {
+    background: var(--light-gray-70);
+  }
 }
 
 /* Additional mobile-specific styles */
@@ -1965,6 +1984,27 @@ textarea.form-input::-webkit-resizer {
     gap: 25px;
     border-radius: 20px;
     width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  /* Custom scrollbar for testimonials modal */
+  .testimonials-modal::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  .testimonials-modal::-webkit-scrollbar-track {
+    background: var(--eerie-black-1);
+    border-radius: 1px;
+  }
+
+  .testimonials-modal::-webkit-scrollbar-thumb {
+    background: var(--jet);
+    border-radius: 1px;
+  }
+
+  .testimonials-modal::-webkit-scrollbar-thumb:hover {
+    background: var(--light-gray-70);
   }
 
   .modal-img-wrapper {
