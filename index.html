@@ -1261,23 +1261,153 @@
                   <time datetime="2021-06" data-testimonials-date2 style="display: none;">Aug, 2025</time>
                   <div class="new-project-text" data-testimonials-text>
                     <p>
-                      StreamHive is a cloud-native video streaming platform built on a modern microservices
-                      architecture. The entire system is orchestrated on Azure Kubernetes Service (AKS), using Azure
-                      Blob Storage for large-scale video file storage. The design focuses on creating a scalable and
-                      resilient application, similar in function to services like YouTube, but engineered with
-                      cloud-first principles for maximum efficiency and automation.</br></br>
+                      ✤ The Idea: Building a Modern YouTube-like Service from the Ground Up</br></br>
+                      The goal of the StreamHive project was to design, build, and deploy a complete, end-to-end video
+                      streaming platform, similar in concept to services like YouTube or Vimeo. The core challenge was
+                      not just to build an application that could play videos, but to architect a system using modern,
+                      cloud-native principles. This means the platform is designed from day one to be highly scalable,
+                      resilient to failures, secure by default, and fully automated.</br></br>
 
-                      Internal service communication is secured and managed by an Istio service mesh, providing
-                      automatic encryption, intelligent traffic routing, and detailed system telemetry. To ensure a
-                      responsive user experience, the platform uses an event-driven approach with RabbitMQ as the
-                      message broker. This decouples long-running tasks like video transcoding from the initial user
-                      request, creating a highly resilient and fault-tolerant system.</br></br>
+                      The project encompasses the entire lifecycle of software development: from a developer writing
+                      code, through automated build and deployment pipelines, to a user accessing the final application
+                      securely and efficiently from anywhere in the world.</br></br>
 
-                      A fully automated CI/CD pipeline enables rapid deployments. Azure DevOps handles the continuous
-                      integration of building and pushing container images from GitHub. Continuous deployment is then
-                      managed by ArgoCD, which uses a GitOps workflow to synchronize the Kubernetes cluster with the
-                      desired state defined in Git. System health is monitored in real-time through Prometheus and
-                      visualized with Grafana dashboards.</br></br>
+                      ✤ The Architecture: A Journey Through a Modern Cloud Application</br></br>
+                      The architecture is layered to separate concerns, ensuring each part of the system is specialized
+                      and efficient.</br></br>
+
+                      » 1. The Entry Point: The Edge & API Gateway</br></br>
+                      Before a user's request ever reaches our application, it passes through the edge layer. We use
+                      Cloudflare as our primary API Gateway and reverse proxy. It acts as the front door,
+                      providing:</br>
+
+                      ‣ Security: DDoS protection and a Web Application Firewall (WAF) to prevent malicious
+                      traffic.</br>
+
+                      ‣ Performance: A global Content Delivery Network (CDN) to cache static assets closer to users,
+                      dramatically speeding up load times.</br>
+
+                      ‣ DNS Management: Securely routing user traffic to our cluster's entry point.</br></br>
+
+                      » 2. The Core Infrastructure: Orchestration on the Cloud</br></br>
+                      The entire application runs on the Azure cloud platform, leveraging its powerful managed
+                      services:</br>
+
+                      ‣ Azure Kubernetes Service (AKS): The heart of our platform. Kubernetes is the orchestrator that
+                      manages our containerized microservices. It handles automatic scaling, healing, and rolling
+                      updates, ensuring the application is always running and available.</br>
+
+                      ‣ Azure Blob Storage: A highly scalable and cost-effective solution for storing large files. We
+                      use
+                      it as the definitive storage for all raw and processed video files.</br>
+
+                      ‣ Azure Key Vault: The secure vault for all our application secrets, like database passwords and
+                      API
+                      keys. This ensures sensitive data is never hard-coded in our source code.</br></br>
+
+                      » 3. The Internal Network: A Secure and Intelligent Service Mesh</br></br>
+                      Once inside the cluster, all service-to-service communication is managed by the Istio service
+                      mesh. Istio automatically injects a smart sidecar proxy into each microservice pod, giving us
+                      incredible power without changing any application code:</br>
+
+                      ‣ Zero-Trust Security: Automatic mutual TLS (mTLS) encryption for all internal traffic, meaning
+                      services communicate securely by default.</br>
+
+                      ‣ Advanced Traffic Management: Intelligent routing, circuit breaking, retries, and timeouts,
+                      making
+                      the entire system more resilient to failures.</br>
+
+                      ‣ Deep Observability: Istio generates detailed metrics, logs, and traces for every single request,
+                      giving us a complete picture of our system's health.</br></br>
+
+                      » 4. The Application Logic: A Suite of Specialized Microservices</br></br>
+                      The application itself is broken down into small, independent microservices written in Go and
+                      Node.js. Each service has a single responsibility, making them easy to develop, test, and scale
+                      independently.</br>
+
+                      ‣ Frontend Service: The user-facing web application that provides the UI.</br>
+
+                      ‣ Security Service: Handles user authentication and authorization using JWTs.</br>
+
+                      ‣ Upload Service: Manages the initial ingestion and validation of video files.</br>
+
+                      ‣ Transcoder Service: A background worker that processes uploaded videos into different formats
+                      and
+                      resolutions for adaptive streaming.</br>
+
+                      ‣ Video Catalog Service: The central API for all video metadata (titles, descriptions, etc.).</br>
+
+                      ‣ Playback Service: Provides the streaming manifests that video players use to stream
+                      content.</br></br>
+
+                      » 5. The Data and Eventing Layer: Ensuring Consistency and Performance</br></br>
+                      The microservices rely on a robust data and messaging layer:</br>
+
+                      ‣ PostgreSQL: Our primary relational database for storing all structured data, like user
+                      information
+                      and video metadata.</br>
+
+                      ‣ Redis: An in-memory cache used to store frequently accessed data, dramatically reducing database
+                      load and improving API response times.</br>
+
+                      ‣ RabbitMQ: A powerful message broker that enables asynchronous communication. When a video is
+                      uploaded, the system immediately responds to the user while publishing an event to a queue. This
+                      decouples the upload process from the slow transcoding process, creating a responsive and
+                      fault-tolerant system.</br></br>
+
+                      » 6. The Automation Engine: A Fully Automated CI/CD GitOps Pipeline</br></br>
+                      The entire process of building and deploying the StreamHive platform is fully automated, following
+                      modern CI/CD and GitOps principles.</br>
+
+                      ‣ Source Control: All application code and Kubernetes configuration is stored in GitHub.</br>
+
+                      ‣ Continuous Integration (CI): We use Azure DevOps to create a CI pipeline that automatically
+                      listens for code changes in GitHub. It builds the code, runs tests, and publishes a versioned
+                      container image to Docker Hub.</br>
+
+                      Continuous Deployment (CD) with GitOps: The final step of the CI pipeline is to update a
+                      Kubernetes manifest file in a separate Git repository with the new image tag. ArgoCD, our GitOps
+                      tool running in the cluster, detects this change and automatically synchronizes the application,
+                      safely rolling out the new version with zero downtime. This means our Git repository is the single
+                      source of truth for our entire live environment.</br></br>
+
+                      » 7. The Observability Stack: Monitoring, Visualizing, and Alerting</br>
+                      To ensure the platform is running smoothly, we have a comprehensive observability stack:
+
+                      ‣ Prometheus: A time-series database that automatically scrapes and stores the detailed metrics
+                      generated by the Istio service mesh.</br>
+
+                      ‣ Grafana: A powerful visualization tool that connects to Prometheus. We use it to build real-time
+                      dashboards that monitor the health, performance, and error rates of every microservice in the
+                      system.</br>
+
+                      ‣ Secrets Management: The Secrets Store CSI Driver is a key security component that bridges Azure
+                      Key Vault and our Kubernetes pods, securely mounting secrets as files at runtime.</br></br>
+
+                      ✤ Technology Stack Summary</br></br>
+                      Cloud: Azure (AKS, Blob Storage, Key Vault)</br>
+
+                      ‣ Containerization & Orchestration: Docker, Kubernetes</br>
+
+                      ‣ CI/CD & GitOps: Azure DevOps, ArgoCD, GitHub, Docker Hub</br>
+
+                      ‣ Networking & Service Mesh: Cloudflare, Istio</br>
+
+                      ‣ Backend Languages: Go, Node.js</br>
+
+                      ‣ Databases & Caching: PostgreSQL, Redis</br>
+
+                      ‣ Messaging: RabbitMQ</br>
+
+                      ‣ Observability: Prometheus, Grafana</br>
+
+                      ‣ Security: Secrets Store CSI Driver</br></br>
+
+                      ✤ Architecture Diagrams</br></br>
+                      <a href="https://app.eraser.io/workspace/j5RSQb8mqDtCia0wPYXF?origin=share" target="_blank">
+                        StreamHive System Architecture</a>
+                      <a href="https://app.eraser.io/workspace/HKdPkOQLFVJRq1ZdnXBm?origin=share"
+                        target="_blank">StreamHive System - High level Architecture</a> </br></br>
                     </p>
                   </div>
                 </div>
