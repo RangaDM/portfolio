@@ -1963,7 +1963,6 @@ textarea.form-input::-webkit-resizer {
     justify-content: flex-start;
     align-items: stretch;
     gap: 25px;
-    padding: 30px;
     border-radius: 20px;
     width: 600px;
   }
