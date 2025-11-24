@@ -260,5 +260,46 @@ function initMobileBehaviors() {
   }
 }
 
+// ... existing code ...
+
+// Handle form submission
+form.addEventListener("submit", function(event) {
+  event.preventDefault(); // Stop the page from reloading
+  
+  // 1. Get the form data
+  const formData = new FormData(form);
+  
+  // 2. Send to Formspree (Replace 'YOUR_FORM_ID' with the code you got from step 1)
+  // Example: fetch("https://formspree.io/f/xkqjbdzp", ...
+  fetch("https://formspree.io/f/xgvbwvjz", {
+    method: "POST",
+    body: formData,
+    headers: {
+        'Accept': 'application/json'
+    }
+  })
+  .then(response => {
+    if (response.ok) {
+      // Success!
+      alert("Thank you! Your message has been sent to Ranga.");
+      form.reset(); // Clear the form
+      formBtn.setAttribute("disabled", ""); // Disable button again
+    } else {
+      // Error from server
+      response.json().then(data => {
+        if (Object.hasOwn(data, 'errors')) {
+          alert(data["errors"].map(error => error["message"]).join(", "));
+        } else {
+          alert("Oops! There was a problem submitting your form");
+        }
+      });
+    }
+  })
+  .catch(error => {
+    // Network error
+    alert("Oops! There was a problem submitting your form");
+  });
+});
+
 // Run initialization
 document.addEventListener('DOMContentLoaded', initMobileBehaviors);
