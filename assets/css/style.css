@@ -328,7 +328,7 @@ main {
 \*-----------------------------------*/
 
 .sidebar {
-  max-height: 112px;
+  /* max-height: 112px; */
   overflow: hidden;
   transition: var(--transition-2);
 }
@@ -365,6 +365,39 @@ main {
   width: max-content;
   padding: 3px 12px;
   border-radius: 8px;
+}
+
+.open-to-work-badge {
+  color: #fff;
+  background: linear-gradient(135deg, hsl(136, 68%, 35%), hsl(136, 68%, 25%));
+  border: 1px solid hsl(136, 80%, 50%);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-500);
+  width: max-content;
+  padding: 5px 12px;
+  border-radius: 8px;
+  /* margin-top: 10px; removed in favor of gap */
+  text-shadow: 0 0 2px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px hsl(136, 80%, 50%);
+  animation: badge-pulse 2s infinite ease-in-out;
+}
+
+.role-badge-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@keyframes badge-pulse {
+  0% {
+    box-shadow: 0 0 5px hsl(136, 80%, 50%), 0 0 10px hsl(136, 80%, 30%);
+  }
+  50% {
+    box-shadow: 0 0 20px hsl(136, 90%, 60%), 0 0 15px hsl(136, 80%, 40%);
+  }
+  100% {
+    box-shadow: 0 0 5px hsl(136, 80%, 50%), 0 0 10px hsl(136, 80%, 30%);
+  }
 }
 
 .info_more-btn {
@@ -1854,6 +1887,12 @@ textarea.form-input::-webkit-resizer {
 
   .info-content .title {
     padding: 5px 18px;
+  }
+
+  .role-badge-wrapper {
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
   }
 
   .info_more-btn {
